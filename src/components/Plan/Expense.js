@@ -27,7 +27,7 @@ class Expense extends Component {
     const { list } = this.props;
     let total = 0;
 
-    list.map(item => total += item.cost);
+    list && list.map(item => total += item.cost);
 
     return formatNumber(total);
   }

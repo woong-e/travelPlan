@@ -5,7 +5,7 @@ import {PlusButton, Tag} from '../../components/common/Ant';
 
 class Supplies extends Component {
   //
-  renderTagList = (list, color) => {
+  renderTagList = (list = [], color) => {
     return list.map((name, index) =>
       <Tag key={`${name}${index}`} color={color}>{name}</Tag>
     );
@@ -17,7 +17,7 @@ class Supplies extends Component {
       meal,
       dessert,
       etc,
-    } = this.props;
+    } = this.props.supplies;
 
     return (
       <Col span={6}>
