@@ -1,10 +1,19 @@
 import React from 'react';
+import {ThemeProvider} from "styled-components";
+import {Provider} from 'react-redux';
+
+import {store, history} from './store/store';
+import PublicRoutes from './routers/Router';
 
 function App() {
+
+  const theme = {}
   return (
-    <div className="App">
-      Hello World!
-    </div>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <PublicRoutes history={history} />
+      </Provider>
+    </ThemeProvider>
   );
 }
 
